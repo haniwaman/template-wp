@@ -1,0 +1,32 @@
+.widget_rss {
+
+	cite {
+		font-size: 14px;
+		color: #666;
+	}
+}
+
+.rss-widget-icon {
+	vertical-align: middle;
+	margin-top: -4px;
+}
+
+.rsswidget {
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+	vertical-align: middle;
+
+	&:hover {
+		opacity: $opacity;
+	}
+}
+
+.rss-date {
+	font-size: 14px;
+	color: #666;
+}
+
+.rssSummary {
+	font-size: 14px;
+	color: #666;
+}

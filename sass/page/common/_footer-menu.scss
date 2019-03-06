@@ -1,0 +1,26 @@
+#footer-menu {
+
+	> .inner {
+		padding-top: 32px;
+		padding-bottom: 32px;
+	}
+}
+
+.footer-nav {
+	text-align: center;
+
+	li {
+		display: inline-block;
+		text-decoration: none;
+		padding: 0 4px;
+
+		a {
+			text-decoration: none;
+			transition: all 0.3s ease 0s;
+
+			&:hover {
+				opacity: $opacity;
+			}
+		}
+	}
+}

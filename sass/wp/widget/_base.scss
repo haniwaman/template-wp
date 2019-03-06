@@ -1,0 +1,37 @@
+.widget {
+	margin-bottom: 32px;
+
+	ul {
+		padding: 0 8px;
+		font-size: 16px;
+	}
+
+	li {
+		font-size: inherit;
+		margin-bottom: 8px;
+
+		a {
+			text-decoration: none;
+			display: inline-block;
+			font-size: inherit;
+
+			&:hover {
+				opacity: $opacity;
+			}
+		}
+
+		ul {
+			font-size: 0.85em;
+			margin-top: 8px;
+		}
+	}
+}
+
+.widget-title {
+	background: #666;
+	font-size: 18px;
+	font-weight: 700;
+	padding: 8px 16px;
+	margin-bottom: 12px;
+	color: #fff;
+}

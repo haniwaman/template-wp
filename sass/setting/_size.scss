@@ -1,0 +1,27 @@
+// レイアウト幅
+$layout-width-canvas: 1440px;
+$layout-width-inner: 1180px;
+$layout-width-main: 840px;
+$layout-width-side: $layout-width-inner - $layout-width-main - 38px; /* 38pxは余白の幅 */
+
+// ブレークポイント
+$breakpoints: (
+	"sp": "screen and (max-width: 767px)",
+	"tab": "screen and (max-width: #{$layout-width-inner - 1px})",
+	"pc": "screen and (min-width: #{$layout-width-inner})",
+	"ie": "screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none)"
+);
+
+// ヘッダー高さ
+$header-height: 80px;
+$header-height-sp: 60px;
+
+// z-index の指定
+$layer: (
+	modal: 100,
+	drawer: 40,
+	floating: 30,
+	header: 20,
+	footer: 10,
+	default: 1
+);

@@ -1,0 +1,32 @@
+.widget_calendar {
+}
+
+#wp-calendar {
+
+	caption {
+		margin-bottom: 4px;
+	}
+
+	th,
+	td {
+		text-align: center;
+	}
+
+	#prev {
+		text-align: left;
+	}
+
+	#next {
+		text-align: right;
+	}
+
+	a {
+		text-decoration: none;
+		color: $cr-m;
+		transition: all 0.3s ease 0s;
+
+		&:hover {
+			opacity: $opacity;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+.wp-caption {
+	max-width: 100%;
+
+	a {
+		transition: all 0.3s ease 0s;
+
+		&:hover {
+			opacity: $opacity;
+		}
+	}
+}
+
+.wp-caption-text {
+	margin-top: 4px;
+	font-size: 14px;
+}

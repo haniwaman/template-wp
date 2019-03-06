@@ -1,0 +1,23 @@
+.widget_search {
+}
+
+.search-form {
+	position: relative;
+}
+
+.screen-reader-text {
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+
+.search-field {
+	width: 100%;
+}
+
+.search-submit {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
