@@ -1238,12 +1238,29 @@ select:focus {
 	padding-right: 12px;
 }
 
+#content > .inner {
+	display: block;
+}
+
+#primary {
+	margin-bottom: 32px;
+	width: 100%;
+}
+
+#secondary {
+	width: 100%;
+}
+
 .drawer {
 	display: block;
 }
 
 .header-nav {
 	display: none;
+}
+
+#mv > .inner {
+	height: 400px;
 }
 
 }

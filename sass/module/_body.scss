@@ -19,14 +19,27 @@
 
 	> .inner {
 		display: flex;
+
+		@include mq("sp") {
+			display: block;
+		}
 	}
 }
 
 #primary {
 	width: ($layout-width-main / $layout-width-inner) * 100%;
+
+	@include mq("sp") {
+		width: 100%;
+		margin-bottom: 32px;
+	}
 }
 
 #secondary {
 	width: ($layout-width-side / $layout-width-inner) * 100%;
 	margin-left: auto;
+
+	@include mq("sp") {
+		width: 100%;
+	}
 }
