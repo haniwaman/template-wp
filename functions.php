@@ -36,6 +36,7 @@ add_action( 'after_setup_theme', 'my_setup' );
 function my_script_init() {
 	wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css', array(), '5.7.2', 'all' );
 	wp_enqueue_style( 'my', get_template_directory_uri() . '/css/style.css', array(), '1.0.1', 'all' );
+	wp_enqueue_style(  'df', get_stylesheet_uri(), array(), $theme_version );
 	wp_enqueue_script( 'my', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.1', true );
 }
 add_action( 'wp_enqueue_scripts', 'my_script_init' );
