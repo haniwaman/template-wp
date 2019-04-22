@@ -44,7 +44,7 @@ function my_the_post_category() {
  */
 function my_get_post_terms( $taxonomy ) {
 	$this_terms = array();
-	$terms      = get_the_terms( $post->ID, $taxonomy );
+	$terms      = get_the_terms( get_the_ID(), $taxonomy );
 	$term_num   = count( $terms );
 	for ( $i = 0; $i < $term_num; $i++ ) {
 		$this_terms[ $i ]['id']   = $terms[ $i ]->term_id;
