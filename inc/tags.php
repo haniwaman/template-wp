@@ -19,6 +19,7 @@ function my_get_post_categories() {
 	for ( $i = 0; $i < $category_num; $i++ ) {
 		$this_categories[ $i ]['id']   = $categories[ $i ]->cat_ID;
 		$this_categories[ $i ]['name'] = $categories[ $i ]->name;
+		$this_categories[ $i ]['slug'] = $categories[ $i ]->slug;
 		$this_categories[ $i ]['link'] = get_category_link( $categories[ $i ]->cat_ID );
 	}
 	return $this_categories;
