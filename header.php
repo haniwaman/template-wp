@@ -27,8 +27,6 @@
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() . '/img/logo.png' ); ?>" alt=""></a>
 	</div><!-- /header-logo -->
 
-	<!-- header-nav -->
-	<nav class="header-nav">
 	<?php
 	wp_nav_menu(
 		array(
@@ -41,7 +39,6 @@
 		)
 	);
 	?>
-	</nav><!-- /header-nav -->
 
 </div><!-- /inner -->
 </header><!-- /header -->
