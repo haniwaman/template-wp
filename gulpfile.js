@@ -63,7 +63,7 @@ gulp.task( 'default', [ 'watch' ], function() {
 
 gulp.task( 'imagemin', function() {
 	return gulp
-		.src( './img/base/*.{png,jpg,gif,svg}' )
+		.src( './img/**/*' )
 		.pipe( imagemin( imageminOption ) )
 		.pipe( gulp.dest( './img' ) );
 });
