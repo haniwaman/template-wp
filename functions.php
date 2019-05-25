@@ -94,3 +94,19 @@ add_image_size( 'my_thumbnail', 840, 600, true );
  * テンプレートタグ
  */
 require_once get_template_directory() . '/inc/tags.php';
+
+
+
+
+/**
+ * ウィジェットの投稿件数をaタグ内に
+ *
+ * @param string $output もともと出力するHTMLタグ.
+ * @return string $output 変換後に出力するHTMLタグ.
+ */
+function my_list_anchor( $output ) {
+	$output = preg_replace( '/<\/a>.*?\((\d+)\)/', ' <span>($1)</span></a>', $output );
+	return $output;
+}
+add_filter( 'wp_list_categories', 'my_list_anchor' );
+add_filter( 'get_archives_link', 'my_list_anchor' );
