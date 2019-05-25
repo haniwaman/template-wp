@@ -65,6 +65,7 @@ get_header(); ?>
 					<?php
 				endwhile;
 				?>
+				</div><!-- /entries -->
 				<?php if ( paginate_links() ) : ?>
 				<!-- pagenation -->
 				<div class="pagenation">
@@ -83,7 +84,6 @@ get_header(); ?>
 					?>
 				</div><!-- /pagenation -->
 				<?php endif; ?>
-			</div><!-- /entries -->
 				<?php
 				endif;
 			?>
