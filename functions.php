@@ -51,7 +51,7 @@ add_action( 'wp_enqueue_scripts', 'my_script_init' );
 function my_menu_init() {
 	register_nav_menus(
 		array(
-			'global'  => 'グローバルメニュー',
+			'global'  => 'ヘッダーメニュー',
 			'utility' => 'ユーティリティメニュー',
 			'drawer'  => 'ドロワーメニュー',
 		)
