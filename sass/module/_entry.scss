@@ -149,6 +149,7 @@
 	}
 
 	strong,
+	em,
 	b{
 		font-weight: 700;
 	}
@@ -164,6 +165,46 @@
 
 	img {
 		vertical-align: middle;
+	}
+	
+		dl {
+		margin-top: 1em;
+	}
+
+	dt {
+		font-weight: 700;
+		margin-top: 0.8em;
+		margin-bottom: 4px;
+	}
+
+	dd {
+	}
+
+	var,
+	code,
+	kbd {
+		background: #fee;
+		color: $cr-m;
+		display: inline-block;
+		padding-left: 0.2em;
+		padding-right: 0.2em;
+		vertical-align: middle;
+		font-style: normal;
+	}
+
+	pre {
+		white-space: pre;
+		overflow: auto;
+		margin-top: 1.2em;
+		padding: 1em;
+
+		code {
+			background: #2d2d2d;
+			color: #fff;
+			padding: 12px;
+			position: relative;
+			margin: -1em;
+		}
 	}
 }
 
