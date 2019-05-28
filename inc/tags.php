@@ -19,6 +19,9 @@ function my_get_post_categories( $id ) {
 		$id = $post->ID;
 	}
 	$categories   = get_the_category( $id );
+	if ( ! $categories ) {
+		return false;
+	}
 	$category_num = count( $categories );
 	for ( $i = 0; $i < $category_num; $i++ ) {
 		$this_categories[ $i ]['id']   = $categories[ $i ]->cat_ID;
@@ -47,6 +50,35 @@ function my_the_post_category( $anchor = true, $id = 0 ) {
 		}
 	}
 }
+
+
+
+/**
+ * タグ取得
+ *
+ * @param integer $id 投稿id.
+ * @return array $this_tags id name slug link の配列.
+ */
+function my_get_post_tags( $id = 0 ) {
+	$this_tags = array();
+	if ( 0 === $id ) {
+		$id = $post->ID;
+	}
+	$tags = get_the_tags( $id );
+	if ( ! $tags ) {
+		return false;
+	}
+	$tag_num = count( $tags );
+	for ( $i = 0; $i < $tag_num; $i++ ) {
+		$this_tags[ $i ]['id']   = $tags[ $i ]->term_id;
+		$this_tags[ $i ]['name'] = $tags[ $i ]->name;
+		$this_tags[ $i ]['slug'] = $tags[ $i ]->slug;
+		$this_tags[ $i ]['link'] = get_tag_link( $tags[ $i ]->term_id );
+	}
+	return $this_tags;
+}
+
+
 
 
 /**
