@@ -14,6 +14,7 @@
  * @codex https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_category_link
  */
 function my_get_post_categories( $id ) {
+	global $post;
 	$this_categories = array();
 	if ( 0 === $id ) {
 		$id = $post->ID;
@@ -60,6 +61,7 @@ function my_the_post_category( $anchor = true, $id = 0 ) {
  * @return array $this_tags id name slug link の配列.
  */
 function my_get_post_tags( $id = 0 ) {
+	global $post;
 	$this_tags = array();
 	if ( 0 === $id ) {
 		$id = $post->ID;
