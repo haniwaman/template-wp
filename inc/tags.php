@@ -68,8 +68,8 @@ function my_get_post_tags( $id = 0 ) {
 	if ( ! $tags ) {
 		return false;
 	}
-	$tag_num = count( $tags );
-	for ( $i = 0; $i < $tag_num; $i++ ) {
+	$tags_num = count( $tags );
+	for ( $i = 0; $i < $tags_num; $i++ ) {
 		$this_tags[ $i ]['id']   = $tags[ $i ]->term_id;
 		$this_tags[ $i ]['name'] = $tags[ $i ]->name;
 		$this_tags[ $i ]['slug'] = $tags[ $i ]->slug;
