@@ -1,5 +1,9 @@
 .widget {
 	margin-bottom: 32px;
+	
+	&:last-child {
+		margin-bottom: 0;
+	}
 
 	ul {
 		padding: 0 8px;
