@@ -45,24 +45,30 @@
 </header><!-- /header -->
 
 
-<!-- drawer -->
-<div class="drawer">
-<div class="drawer-open"><span></span></div>
-<div class="drawer-close"></div>
+<div class="header-drawer">
+<div class="c-drawer">
+    <div class="c-drawer__icon js-drawer for-drawer01" data-target="for-drawer01">
+        <div class="c-drawer__bars">
+            <span class="c-drawer__bar"></span>
+            <span class="c-drawer__bar"></span>
+            <span class="c-drawer__bar"></span>
+        </div>
+    </div>
+    <div class="c-drawer__close js-drawer for-drawer01" data-target="for-drawer01"></div>
+    <div class="c-drawer__content for-drawer01">
+			<?php
+			wp_nav_menu(
+				array(
+					'container'       => false,
+					'depth'           => 1,
+					'theme_location'  => 'drawer',
+					'container'       => 'nav',
+					'container_class' => 'drawer-nav',
+					'menu_class'      => 'drawer-list',
+				)
+			);
+			?>
+		</div>
+</div><!-- /c-drawer -->
+</div><!-- /header-drawer -->
 
-<!-- drawer-content -->
-<div class="drawer-content">
-<?php
-	wp_nav_menu(
-		array(
-			'container'       => false,
-			'depth'           => 1,
-			'theme_location'  => 'drawer',
-			'container'       => 'nav',
-			'container_class' => 'drawer-nav',
-			'menu_class'      => 'drawer-list',
-		)
-	);
-	?>
-</div><!-- /drawer-content -->
-</div><!-- /drawer -->
