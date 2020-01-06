@@ -1,20 +1,21 @@
-var gulp = require( 'gulp' );
-var sass = require( 'gulp-sass' );
-var plumber = require( 'gulp-plumber' );
-var notify = require( 'gulp-notify' );
-var sassGlob = require( 'gulp-sass-glob' );
-var mmq = require( 'gulp-merge-media-queries' );
-var browserSync = require( 'browser-sync' );
-var imagemin = require( 'gulp-imagemin' );
-var imageminPngquant = require( 'imagemin-pngquant' );
-var imageminMozjpeg = require( 'imagemin-mozjpeg' );
+const gulp = require("gulp");
 
-var postcss = require( 'gulp-postcss' );
-var autoprefixer = require( 'autoprefixer' );
-var cssdeclsort = require( 'css-declaration-sorter' );
+/* sass */
+const sass = require("gulp-sass");
+const plumber = require("gulp-plumber");
+const notify = require("gulp-notify");
+const sassGlob = require("gulp-sass-glob");
+const mmq = require("gulp-merge-media-queries");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const cssdeclsort = require("css-declaration-sorter");
 
-var imageminOption = [
-	imageminPngquant({ quality: '65-80' }),
+/* imagemin */
+const imagemin = require("gulp-imagemin");
+const imageminPngquant = require("imagemin-pngquant");
+const imageminMozjpeg = require("imagemin-mozjpeg");
+const imageminOption = [
+	imageminPngquant({ quality: "65-80" }),
 	imageminMozjpeg({ quality: 85 }),
 	imagemin.gifsicle({
 		interlaced: false,
@@ -26,41 +27,30 @@ var imageminOption = [
 	imagemin.svgo()
 ];
 
-gulp.task( 'sass', function() {
+gulp.task("sass", function() {
 	return gulp
-		.src( './sass/**/*.scss' )
-		.pipe( plumber({ errorHandler: notify.onError( 'Error: <%= error.message %>' ) }) )
-		.pipe( sassGlob() )
-		.pipe( sass({ outputStyle: 'expanded' }) )
-		.pipe( postcss([ autoprefixer() ]) )
-		.pipe( postcss([ cssdeclsort({ order: 'alphabetically' }) ]) )
-		.pipe( mmq() )
-		.pipe( gulp.dest( './css' ) );
+		.src("./sass/**/*.scss")
+		.pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
+		.pipe(sassGlob())
+		.pipe(sass({ outputStyle: "expanded" }))
+		.pipe(postcss([autoprefixer()]))
+		.pipe(postcss([cssdeclsort({ order: "alphabetical" })]))
+		.pipe(mmq())
+		.pipe(gulp.dest("./css"));
 });
 
-gulp.task( 'watch', function() {
-	gulp.watch( './sass/**/*.scss', [ 'sass', 'bs-reload' ]);
+gulp.task("watch", function(done) {
+	gulp.watch("./sass/**/*.scss", gulp.task("sass"));
+	gulp.watch("./*.php");
+	gulp.watch("./css/*.css");
+	gulp.watch("./js/*.js");
 });
 
-gulp.task( 'browser-sync', function() {
-	browserSync.init({
-		proxy: 'template.local'
-	});
-});
+gulp.task("default", gulp.series(gulp.parallel("watch")));
 
-gulp.task( 'bs-reload', function() {
-	browserSync.reload();
-});
-
-gulp.task( 'default', [ 'watch' ], function() {
-	gulp.watch( './*.php', [ 'bs-reload' ]);
-	gulp.watch( './css/*.css', [ 'bs-reload' ]);
-	gulp.watch( './js/*.js', [ 'bs-reload' ]);
-});
-
-gulp.task( 'imagemin', function() {
+gulp.task("imagemin", function() {
 	return gulp
-		.src( './img/**/*' )
-		.pipe( imagemin( imageminOption ) )
-		.pipe( gulp.dest( './img' ) );
+		.src("./img/**/*")
+		.pipe(imagemin(imageminOption))
+		.pipe(gulp.dest("./img"));
 });

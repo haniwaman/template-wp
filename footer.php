@@ -7,8 +7,8 @@
 
 ?>
 
-<!-- footer-menu -->
-<div id="footer-menu">
+
+<div class="footer-menu">
 <div class="inner">
 
 <?php
@@ -28,14 +28,15 @@
 </div><!-- /footer-menu -->
 
 
-<!-- footer -->
-<footer id="footer">
+<footer class="footer">
 <div class="inner">
 
-<div class="copy">Copyright &copy; <?php echo esc_html( date( 'Y' ) ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a> All Rights Reserved.</div><!-- /copy -->
+<div class="footer-copy">Copyright &copy; <?php echo esc_html( date( 'Y' ) ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a> All Rights Reserved.</div><!-- /footer-copy -->
 
 </div><!-- /inner -->
 </footer><!-- /footer -->
+
+<div class="totop"><a href="#"><i class="fas fa-chevron-up"></i></a></div><!-- /.totop -->
 
 <?php wp_footer(); ?>
 </body>

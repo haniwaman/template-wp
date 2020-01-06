@@ -1,6 +1,6 @@
 .widget {
-	margin-bottom: 32px;
-	
+	margin-bottom: 46px;
+
 	&:last-child {
 		margin-bottom: 0;
 	}
@@ -12,7 +12,7 @@
 
 	li {
 		font-size: inherit;
-		margin-bottom: 8px;
+		margin-bottom: 12px;
 
 		a {
 			text-decoration: none;
@@ -26,16 +26,17 @@
 
 		ul {
 			font-size: 0.85em;
-			margin-top: 8px;
+			margin-top: 12px;
 		}
 	}
 }
 
 .widget-title {
-	background: #666;
+	background: transparent;
+	border-bottom: 1px solid #666;
 	font-size: 18px;
 	font-weight: 700;
-	padding: 8px 16px;
+	padding: 8px 6px;
 	margin-bottom: 12px;
-	color: #fff;
+	color: $cr-txt;
 }

@@ -1,5 +1,6 @@
 .entry {
-	box-shadow: 0 0 3px 0 rgba(#000, 0.16);
+	// box-shadow: 0 0 3px 0 rgba(#000, 0.16);
+	border: 1px solid rgba(#000, 0.16);
 	background: #fff;
 	padding: 24px;
 	margin-bottom: 32px;
@@ -22,7 +23,7 @@
 }
 
 .entry-published {
-	font-size: 14px;
+	font-size: 13px;
 	color: #666;
 }
 
@@ -35,8 +36,8 @@
 		display: block;
 		padding: 4px 8px;
 		background: #333;
-		font-size: 14px;
-		transition: all 0.3s ease 0s;
+		font-size: 13px;
+		transition: opacity 0.3s ease 0s;
 
 		&:hover {
 			opacity: $opacity;
@@ -50,7 +51,7 @@
 
 .entry-body {
 	margin-top: 32px;
-	
+
 	h2,
 	h3,
 	h4,
@@ -150,13 +151,13 @@
 
 	strong,
 	em,
-	b{
+	b {
 		font-weight: 700;
 	}
 
 	a {
 		text-decoration: underline;
-		transition: all 0.3s ease 0s;
+		transition: opacity 0.3s ease 0s;
 
 		&:hover {
 			opacity: $opacity;
@@ -166,8 +167,8 @@
 	img {
 		vertical-align: middle;
 	}
-	
-		dl {
+
+	dl {
 		margin-top: 1em;
 	}
 
@@ -258,10 +259,9 @@
 .entry-prev {
 	width: 50%;
 	padding: 4px;
-	text-align: right;
 
 	a {
-		transition: all 0.3s ease 0s;
+		transition: opacity 0.3s ease 0s;
 		text-decoration: none;
 
 		&:hover {
@@ -273,9 +273,10 @@
 .entry-next {
 	width: 50%;
 	padding: 4px;
+	text-align: right;
 
 	a {
-		transition: all 0.3s ease 0s;
+		transition: opacity 0.3s ease 0s;
 		text-decoration: none;
 
 		&:hover {

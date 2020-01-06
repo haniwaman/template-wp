@@ -8,21 +8,21 @@
 get_header(); ?>
 
 
-<!-- mv -->
-<div id="mv">
+
+<div class="mv">
 <div class="inner">
 </div><!-- /inner -->
 </div><!-- /mv -->
 
 
-<!-- content -->
-<div id="content">
+
+<div class="content">
 <div class="inner">
+<div class="row">
 
-<!-- primary -->
-<main id="primary">
 
-<!-- entry -->
+<main class="primary">
+
 <article <?php post_class( array( 'entry' ) ); ?>>
 
 	<p>コンテンツが存在しません。</p>
@@ -35,6 +35,7 @@ get_header(); ?>
 <?php get_sidebar(); ?>
 
 
+</div><!-- /row -->
 </div><!-- /inner -->
 </div><!-- /content -->
 

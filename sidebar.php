@@ -7,8 +7,7 @@
 
 if ( is_active_sidebar( 'sidebar' ) ) : ?>
 
-<!-- secondary -->
-<aside id="secondary">
+<aside class="secondary">
 	<?php dynamic_sidebar( 'sidebar' ); ?>
 </aside><!-- secondary -->
 

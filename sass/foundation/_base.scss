@@ -20,6 +20,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background: $cr-bg;
 	overflow-x: hidden;
+	overflow-wrap: break-word;
 }
 
 article,
@@ -121,7 +122,7 @@ code,
 kbd,
 pre,
 samp {
-	font-family: monospace, sans-serif;
+	font-family: $ff-code;
 	font-size: inherit;
 }
 
@@ -166,7 +167,7 @@ address {
 form {
 	margin: 0;
 	padding: 0;
-	
+
 	button {
 		width: auto;
 		display: inline-block;
@@ -253,7 +254,7 @@ input {
 		font-size: 16px;
 		cursor: pointer;
 		-webkit-appearance: none;
-		transition: all 0.3s ease 0s;
+		transition: opacity 0.3s ease 0s;
 
 		&:hover,
 		&:focus {
@@ -361,8 +362,8 @@ input {
 				height: ($size-checkbox * 0.6);
 				margin-top: -0.2em;
 				display: block;
-				border-left: 4px solid $cr-form-bd_avtive;
-				border-bottom: 4px solid $cr-form-bd_avtive;
+				border-left: 4px solid $cr-check_active;
+				border-bottom: 4px solid $cr-check_active;
 				opacity: 1;
 			}
 		}
@@ -381,8 +382,8 @@ select {
 	color: inherit;
 	-moz-appearance: none;
 	-webkit-appearance: none;
-	border: 1px solid $cr-form-bd;
 	cursor: pointer;
+	border: 1px solid $cr-form-bd;
 
 	&::-ms-expand {
 		display: none;

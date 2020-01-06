@@ -1,11 +1,3 @@
-// メディアクエリー
-@mixin mq($breakpoint: sp) {
-
-	@media #{map-get($breakpoints, $breakpoint)} {
-		@content;
-	}
-}
-
 // 割り算
 @function division($size, $size2) {
 

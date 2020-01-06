@@ -15,7 +15,8 @@ function my_setup() {
 	add_theme_support( 'automatic-feed-links' ); /* RSSフィード */
 	add_theme_support( 'title-tag' ); /* タイトルタグ自動生成 */
 	add_theme_support(
-		'html5', array( /* HTML5のタグで出力 */
+		'html5',
+		array( /* HTML5のタグで出力 */
 			'search-form',
 			'comment-form',
 			'comment-list',
@@ -37,7 +38,7 @@ function my_script_init() {
 	wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css', array(), '5.8.2', 'all' );
 	wp_enqueue_style( 'my', get_template_directory_uri() . '/css/style.css', array(), '1.0.1', 'all' );
 	wp_enqueue_style( 'df', get_stylesheet_uri(), array(), array(), '1.0.1', 'all' );
-	
+
 	wp_deregister_script( 'jquery' );
 	wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), '3.3.1', true );
 	wp_enqueue_script( 'my', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.1', true );
@@ -100,6 +101,47 @@ require_once get_template_directory() . '/inc/tags.php';
 
 
 
+/**
+ * パンくず
+ */
+require_once get_template_directory() . '/inc/breadcrumb.php';
+
+/**
+ * パンくずリストの「ホーム」テキストの書き換え
+ *
+ * @param string $home 書き換え前のホーム.
+ * @return string $home 書き換え後のホーム.
+ */
+function my_breadcrumb_home_change( $home ) {
+	return 'Home';
+}
+add_filter( 'my_breadcrumb_home', 'my_breadcrumb_home_change' );
+
+/**
+ * パンくずリストの区切り文字の書き換え
+ *
+ * @param string $bridge 書き換え前の区切り文字.
+ * @return string $bridge 書き換え後の区切り文字.
+ */
+function my_breadcrumb_bridge_change( $bridge ) {
+	return $bridge;
+}
+add_filter( 'my_breadcrumb_bridge', 'my_breadcrumb_bridge_change' );
+
+/**
+ * パンくずリストのタイトルの書き換え
+ *
+ * @param string $title 書き換え前のタイトル.
+ * @return string $title 書き換え後のタイトル.
+ */
+function my_breadcrumb_title_change( $title ) {
+	if ( is_home() ) {
+		$title = 'ブログ';
+	}
+	return $title;
+}
+add_filter( 'my_breadcrumb_title', 'my_breadcrumb_title_change' );
+
 
 /**
  * アーカイブタイトル書き換え
@@ -109,7 +151,9 @@ require_once get_template_directory() . '/inc/tags.php';
  */
 function my_archive_title( $title ) {
 
-	if ( is_category() ) { /* カテゴリーアーカイブの場合 */
+	if ( is_home() ) { /* ホームの場合 */
+		$title = 'ブログ';
+	} elseif ( is_category() ) { /* カテゴリーアーカイブの場合 */
 		$title = '' . single_cat_title( '', false ) . '';
 	} elseif ( is_tag() ) { /* タグアーカイブの場合 */
 		$title = '' . single_tag_title( '', false ) . '';

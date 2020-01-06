@@ -19,7 +19,7 @@ function my_get_post_categories( $id ) {
 	if ( 0 === $id ) {
 		$id = $post->ID;
 	}
-	$categories   = get_the_category( $id );
+	$categories = get_the_category( $id );
 	if ( ! $categories ) {
 		return false;
 	}

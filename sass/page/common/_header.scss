@@ -1,19 +1,19 @@
-#header {
-	position: fixed;
+.header {
+	position: relative;
 	width: 100%;
 	background: #fff;
 	top: 0;
 	left: 0;
-	box-shadow: 0 1px 3px rgba(#000, 0.16);
+	// box-shadow: 0 1px 3px rgba(#000, 0.16);
 	z-index: map-get($layer, "header");
+	height: $header-height;
 
-	> .inner {
-		display: flex;
-		align-items: center;
-		padding-top: 0;
-		padding-bottom: 0;
-		height: $header-height;
+	@include mq("sp") {
+		height: $header-height-sp;
 	}
+}
+
+.header-inner {
 }
 
 .header-logo {
@@ -39,12 +39,12 @@
 	}
 
 	ul {
-		font-size: 0;
+		display: flex;
+		align-items: center;
 	}
 
 	li {
-		display: inline-block;
-		margin-right: 16px;
+		margin-right: 46px;
 
 		&:last-child {
 			margin-right: 0;
@@ -54,12 +54,19 @@
 			text-decoration: none;
 			color: $cr-txt;
 			display: block;
-			font-size: 16px;
 			transition: all 0.3s ease 0s;
 
 			&:hover {
 				opacity: $opacity;
 			}
 		}
+	}
+}
+
+.header-drawer {
+	display: none;
+
+	@include mq("sp") {
+		display: block;
 	}
 }

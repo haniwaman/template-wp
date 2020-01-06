@@ -1,0 +1,30 @@
+.totop {
+	position: fixed;
+	right: 0;
+	bottom: 30px;
+	z-index: map-get($layer, "floating");
+	opacity: 0;
+	transition: opacity 0.3s ease 0s;
+
+	[data-scroll="true"] & {
+		opacity: 1;
+	}
+
+	a {
+		text-decoration: none;
+		width: 42px;
+		height: 42px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #666;
+		color: #fff;
+		font-size: 14px;
+
+		@include mq("sp") {
+			width: 30px;
+			height: 30px;
+			font-size: 12px;
+		}
+	}
+}

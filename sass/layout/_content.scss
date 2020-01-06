@@ -1,0 +1,29 @@
+.content {
+	padding: 42px 0;
+
+	@include mq("sp") {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	> .inner {
+	}
+}
+
+.primary {
+	width: ($layout-width-main / $layout-width-inner) * 100%;
+
+	@include mq("sp") {
+		width: 100%;
+	}
+}
+
+.secondary {
+	width: ($layout-width-side / $layout-width-inner) * 100%;
+	margin-left: auto;
+
+	@include mq("sp") {
+		width: 100%;
+		margin-top: 64px;
+	}
+}

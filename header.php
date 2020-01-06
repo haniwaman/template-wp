@@ -19,33 +19,35 @@
 
 <body <?php body_class(); ?>>
 
-<!-- header -->
-<header id="header">
+
+<header class="header">
 <div class="inner">
+<div class="row--middle">
 
-	<!-- header-logo -->
-	<div class="header-logo">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() . '/img/logo.png' ); ?>" alt=""></a>
-	</div><!-- /header-logo -->
+<?php if ( is_front_page() ) : ?>
+<h1 class="header-logo">
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() . '/img/logo.png' ); ?>" alt=""></a>
+</h1><!-- /header-logo -->
+<?php else : ?>
+<div class="header-logo">
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() . '/img/logo.png' ); ?>" alt=""></a>
+</div><!-- /header-logo -->
+<?php endif; ?>
 
-	<?php
-	wp_nav_menu(
-		array(
-			'container'       => false,
-			'depth'           => 1,
-			'theme_location'  => 'global',
-			'container'       => 'nav',
-			'container_class' => 'header-nav',
-			'menu_class'      => 'header-list',
-		)
-	);
-	?>
+<?php
+wp_nav_menu(
+	array(
+		'container'       => false,
+		'depth'           => 1,
+		'theme_location'  => 'global',
+		'container'       => 'nav',
+		'container_class' => 'header-nav',
+		'menu_class'      => 'header-list',
+	)
+);
+?>
 
-</div><!-- /inner -->
-</header><!-- /header -->
 
-	
-<!-- header-drawer -->
 <div class="header-drawer">
 	<div class="drawer">
 		<div class="drawer-icon js-drawer for-drawer" data-target="for-drawer">
@@ -53,9 +55,9 @@
 					<span class="drawer-bar"></span>
 					<span class="drawer-bar"></span>
 					<span class="drawer-bar"></span>
-			</div>
-		</div>
-		<div class="drawer-close js-drawer for-drawer"></div>
+			</div><!-- /drawer-bars -->
+		</div><!-- /drawer-icon -->
+		<div class="drawer-close js-drawer for-drawer" data-target="for-drawer"></div>
 		<div class="drawer-content for-drawer">
 			<?php
 			wp_nav_menu(
@@ -69,6 +71,11 @@
 				)
 			);
 			?>
-		</div>
-	</div>
+		</div><!-- /drawer-content -->
+	</div><!-- /drawer -->
 </div><!-- /header-drawer -->
+
+</div><!-- /row -->
+</div><!-- /inner -->
+</header><!-- /header -->
+

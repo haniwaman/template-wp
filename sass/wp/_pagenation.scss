@@ -3,7 +3,7 @@
 	margin-top: 32px;
 
 	a {
-		transition: all 0.3s ease 0s;
+		transition: color, background 0.3s ease 0s;
 
 		&:hover {
 			color: #fff;
@@ -28,7 +28,7 @@
 	text-align: center;
 	min-width: 30px;
 	height: 30px;
-	line-height: 30px;
+	line-height: 28px;
 	color: #666;
 	text-decoration: none;
 	display: inline-block;

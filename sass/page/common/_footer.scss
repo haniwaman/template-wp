@@ -1,13 +1,11 @@
-#footer {
+.footer {
 	background: #666;
 
 	> .inner {
-		padding-top: 0;
-		padding-bottom: 0;
 	}
 }
 
-.copy {
+.footer-copy {
 	color: #fff;
 	font-size: 14px;
 	padding: 8px;

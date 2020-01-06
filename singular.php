@@ -8,19 +8,17 @@
 get_header(); ?>
 
 
-<!-- mv -->
-<div id="mv">
+<div class="mv">
 <div class="inner">
 </div><!-- /inner -->
 </div><!-- /mv -->
 
 
-<!-- content -->
-<div id="content">
+<div class="content">
 <div class="inner">
+<div class="row">
 
-<!-- primary -->
-<main id="primary">
+<main class="primary">
 
 <?php
 if ( have_posts() ) :
@@ -28,20 +26,16 @@ if ( have_posts() ) :
 		the_post();
 		?>
 
-<!-- entry -->
 <article <?php post_class( array( 'entry' ) ); ?>>
 
-	<!-- entry-header -->
 	<div class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1><!-- /entry-title -->
 
-		<!-- entry-meta -->
 		<div class="entry-meta">
 			<time class="entry-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
 			<div class="entry-tag"><?php my_the_post_category(); ?></div><!-- /entry-item-tag -->
 		</div><!-- /entry-meta -->
 
-		<!-- entry-img -->
 		<div class="entry-img">
 		<?php
 		if ( has_post_thumbnail() ) {
@@ -53,7 +47,6 @@ if ( have_posts() ) :
 		</div><!-- /entry-img -->
 	</div><!-- /entry-header -->
 
-	<!-- entry-body -->
 	<div class="entry-body">
 		<?php the_content(); ?>
 		<?php
@@ -72,10 +65,10 @@ if ( have_posts() ) :
 
 </article><!-- /entry -->
 
-<!-- entry-pager -->
+
 <div class="entry-pager">
-			<?php next_post_link( '<div class="entry-next"><div class="entry-pager-title">次の記事</div>%link</div>', '%title', false ); ?>
-			<?php previous_post_link( '<div class="entry-prev"><div class="entry-pager-title">前の記事</div>%link</div>', '%title', false ); ?>
+		<?php previous_post_link( '<div class="entry-prev">%link</div>', '<i class="fas fa-angle-left"></i> 前の記事', false ); ?>
+		<?php next_post_link( '<div class="entry-next">%link</div>', '次の記事 <i class="fas fa-angle-right"></i>', false ); ?>
 </div><!-- /entry-pager -->
 
 		<?php
@@ -89,6 +82,7 @@ endif;
 <?php get_sidebar(); ?>
 
 
+</div><!-- /row -->
 </div><!-- /inner -->
 </div><!-- /content -->
 
