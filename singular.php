@@ -67,8 +67,8 @@ if ( have_posts() ) :
 
 
 <div class="entry-pager">
-		<?php previous_post_link( '<div class="entry-prev">%link</div>', '<i class="fas fa-angle-left"></i> 前の記事', false ); ?>
-		<?php next_post_link( '<div class="entry-next">%link</div>', '次の記事 <i class="fas fa-angle-right"></i>', false ); ?>
+	<div class="entry-prev"><?php previous_post_link( '%link', '<i class="fas fa-angle-left"></i> 前の記事', false ); ?></div>
+	<div class="entry-next"><?php next_post_link( '%link', '次の記事 <i class="fas fa-angle-right"></i>', false ); ?></div>
 </div><!-- /entry-pager -->
 
 		<?php
