@@ -61,6 +61,10 @@
 	@include mq("sp") {
 		width: 100%;
 	}
+	
+	.content--column-one & {
+		width: 100%;
+	}
 }
 
 .secondary {
@@ -68,6 +72,11 @@
 	margin-left: auto;
 
 	@include mq("sp") {
+		width: 100%;
+		margin-top: 64px;
+	}
+	
+	.content--column-one & {
 		width: 100%;
 		margin-top: 64px;
 	}
