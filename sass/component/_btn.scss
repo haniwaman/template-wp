@@ -38,13 +38,19 @@ $btn-letter-spacing: 0.04em;
 		cursor: pointer;
 	}
 
-	&:hover,
-	&:focus {
+	&:hover {
 		outline: none;
 	}
 
-	&::-moz-foucus-inner {
-		padding: 0;
-		border: none;
+	@if $no-focus {
+
+		&:focus {
+			outline: none;
+		}
+
+		&::-moz-foucus-inner {
+			padding: 0;
+			border: none;
+		}
 	}
 }

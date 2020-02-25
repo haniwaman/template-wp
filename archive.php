@@ -1,6 +1,6 @@
 <?php
 /**
- * Index
+ * Archive
  *
  * @package WordPress
  */
@@ -9,7 +9,6 @@ get_header();
 get_template_part( 'parts/mv/archive' );
 get_template_part( 'parts/breadcrumb' );
 ?>
-
 
 
 <div class="content content--column-one">

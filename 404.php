@@ -5,15 +5,10 @@
  * @package WordPress
  */
 
-get_header(); ?>
-
-
-
-<div class="mv">
-<div class="inner">
-</div><!-- /inner -->
-</div><!-- /mv -->
-
+get_header();
+get_template_part( 'parts/mv/archive' );
+get_template_part( 'parts/breadcrumb' );
+?>
 
 
 <div class="content">
@@ -22,13 +17,15 @@ get_header(); ?>
 
 
 <main class="primary">
+<div class="content__page">
 
-<article <?php post_class( array( 'entry' ) ); ?>>
+<article <?php post_class( array( 'entry', 'entry--page' ) ); ?>>
 
 	<p>コンテンツが存在しません。</p>
 
 </article><!-- /entry -->
 
+</div><!-- /.content__page -->
 </main><!-- /primary -->
 
 

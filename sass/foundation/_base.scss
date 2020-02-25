@@ -103,7 +103,10 @@ td {
 
 a {
 	color: inherit;
-	outline: none;
+
+	@if $no-focus {
+		outline: none;
+	}
 }
 
 img {
@@ -167,42 +170,16 @@ address {
 form {
 	margin: 0;
 	padding: 0;
-
-	button {
-		width: auto;
-		display: inline-block;
-		padding: 0.6em 2em;
-		margin: 0;
-		background-image: none;
-		background-color: $cr-m;
-		color: #fff;
-		text-decoration: none;
-		border: none;
-		border-radius: 0;
-		font-size: 16px;
-		cursor: pointer;
-		-webkit-appearance: none;
-		transition: all 0.3s ease 0s;
-
-		&:hover,
-		&:focus {
-			outline: none;
-		}
-
-		&:hover {
-			opacity: $opacity;
-		}
-
-		::-moz-focus-inner {
-			padding: 0;
-			border: none;
-		}
-	}
 }
 
-input,
+// http://www.htmq.com/html5/input.shtml
+[type="text"],
+[type="search"],
+[type="tel"],
+[type="url"],
+[type="email"],
+[type="password"],
 textarea {
-	width: 100%;
 	padding: 8px;
 	border: 1px solid $cr-form-bd;
 	border-radius: 0;
@@ -210,59 +187,20 @@ textarea {
 	font-family: inherit;
 	font-size: 1em;
 	-webkit-appearance: none;
-}
 
-textarea {
-
-	&:hover,
-	&:focus {
+	&:hover {
 		outline: none;
 	}
 
 	&:focus {
-		outline: none;
 		border-color: $cr-form-bd_avtive;
-		box-shadow: none;
 	}
 
-	::-moz-focus-inner {
-		padding: 0;
-		border: none;
-	}
-}
+	@if $no-focus {
 
-input {
-
-	&:focus {
-		outline: none;
-		border-color: $cr-form-bd_avtive;
-		box-shadow: none;
-	}
-
-	&[type="submit"],
-	&[type="button"] {
-		width: auto;
-		display: inline-block;
-		padding: 0.6em 2em;
-		margin: 0;
-		background-image: none;
-		background-color: $cr-m;
-		color: #fff;
-		text-decoration: none;
-		border: none;
-		border-radius: 0;
-		font-size: 16px;
-		cursor: pointer;
-		-webkit-appearance: none;
-		transition: opacity 0.3s ease 0s;
-
-		&:hover,
 		&:focus {
 			outline: none;
-		}
-
-		&:hover {
-			opacity: $opacity;
+			box-shadow: none;
 		}
 
 		::-moz-focus-inner {
@@ -270,102 +208,138 @@ input {
 			border: none;
 		}
 	}
+}
 
-	&[type="radio"] {
-		display: none;
+button,
+[type="button"],
+[type="submit"] {
+	width: auto;
+	display: inline-block;
+	padding: 0.6em 2em;
+	margin: 0;
+	background-image: none;
+	background-color: $cr-m;
+	color: #fff;
+	text-decoration: none;
+	border: none;
+	border-radius: 0;
+	font-size: 16px;
+	cursor: pointer;
+	-webkit-appearance: none;
+	transition: opacity 0.3s ease 0s;
 
-		+ span {
-			display: inline-block;
-			position: relative;
-			padding: 0 0 0 $size-radio-pd_left;
-			margin: 0 16px 0 0;
-			cursor: pointer;
+	&:hover {
+		outline: none;
+		opacity: $opacity;
+	}
 
-			&::before {
-				position: absolute;
-				content: "";
-				top: 50%;
-				left: 0;
-				transform: translateY(-50%);
-				background: #fff;
-				border: 1px solid $cr-form-bd;
-				border-radius: 50%;
-				width: $size-radio;
-				height: $size-radio;
-				display: block;
-			}
+	@if $no-focus {
 
-			&::after {
-				opacity: 0;
-				transition: opacity 0.3s ease 0s;
-			}
+		&:focus {
+			outline: none;
 		}
 
-		&:checked + span {
+		::-moz-focus-inner {
+			padding: 0;
+			border: none;
+		}
+	}
+}
 
-			&::after {
-				position: absolute;
-				content: "";
-				top: 50%;
-				left: ($size-radio - $size-radio_active) / 2;
-				transform: translateY(-50%);
-				background: $cr-check;
-				border-radius: 50%;
-				width: $size-radio_active;
-				height: $size-radio_active;
-				display: block;
-				opacity: 1;
-			}
+[type="radio"] {
+	display: none;
+
+	+ span {
+		display: inline-block;
+		position: relative;
+		padding: 0 0 0 $size-radio-pd_left;
+		margin: 0 16px 0 0;
+		cursor: pointer;
+
+		&::before {
+			position: absolute;
+			content: "";
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			background: #fff;
+			border: 1px solid $cr-form-bd;
+			border-radius: 50%;
+			width: $size-radio;
+			height: $size-radio;
+			display: block;
+		}
+
+		&::after {
+			opacity: 0;
+			transition: opacity 0.3s ease 0s;
 		}
 	}
 
-	&[type="checkbox"] {
-		display: none;
+	&:checked + span {
 
-		+ span {
-			display: inline-block;
-			position: relative;
-			padding: 0 0 0 $size-checkbox-pd_left;
-			margin: 0 16px 0 0;
-			cursor: pointer;
-			transition: all 1s ease 0s;
+		&::after {
+			position: absolute;
+			content: "";
+			top: 50%;
+			left: ($size-radio - $size-radio_active) / 2;
+			transform: translateY(-50%);
+			background: $cr-check;
+			border-radius: 50%;
+			width: $size-radio_active;
+			height: $size-radio_active;
+			display: block;
+			opacity: 1;
+		}
+	}
+}
 
-			&::before {
-				position: absolute;
-				content: "";
-				top: 50%;
-				left: 0;
-				transform: translateY(-50%);
-				background: #fff;
-				border: 1px solid $cr-form-bd;
-				border-radius: 2px;
-				width: $size-checkbox;
-				height: $size-checkbox;
-				display: block;
-			}
+[type="checkbox"] {
+	display: none;
 
-			&::after {
-				opacity: 0;
-				transition: opacity 0.3s ease 0s;
-			}
+	+ span {
+		display: inline-block;
+		position: relative;
+		padding: 0 0 0 $size-checkbox-pd_left;
+		margin: 0 16px 0 0;
+		cursor: pointer;
+		transition: all 1s ease 0s;
+
+		&::before {
+			position: absolute;
+			content: "";
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			background: #fff;
+			border: 1px solid $cr-form-bd;
+			border-radius: 2px;
+			width: $size-checkbox;
+			height: $size-checkbox;
+			display: block;
 		}
 
-		&:checked + span {
+		&::after {
+			opacity: 0;
+			transition: opacity 0.3s ease 0s;
+		}
+	}
 
-			&::after {
-				position: absolute;
-				content: "";
-				top: 50%;
-				left: 0;
-				transform: translateY(-50%) rotate(-45deg);
-				width: $size-checkbox;
-				height: ($size-checkbox * 0.6);
-				margin-top: -0.2em;
-				display: block;
-				border-left: 4px solid $cr-check_active;
-				border-bottom: 4px solid $cr-check_active;
-				opacity: 1;
-			}
+	&:checked + span {
+
+		&::after {
+			position: absolute;
+			content: "";
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%) rotate(-45deg);
+			width: $size-checkbox;
+			height: ($size-checkbox * 0.6);
+			margin-top: -0.2em;
+			display: block;
+			border-left: 4px solid $cr-check_active;
+			border-bottom: 4px solid $cr-check_active;
+			opacity: 1;
 		}
 	}
 }
@@ -390,8 +364,11 @@ select {
 	}
 
 	&:focus {
-		outline: none;
-		box-shadow: none;
 		border-color: $cr-form-bd_avtive;
+
+		@if $no-focus {
+			outline: none;
+			box-shadow: none;
+		}
 	}
 }

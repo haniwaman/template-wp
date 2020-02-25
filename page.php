@@ -1,24 +1,21 @@
 <?php
 /**
- * Singular
+ * Page
  *
  * @package WordPress
  */
 
-get_header(); ?>
-
-
-<div class="mv">
-<div class="inner">
-</div><!-- /inner -->
-</div><!-- /mv -->
-
+get_header();
+get_template_part( 'parts/mv/page' );
+get_template_part( 'parts/breadcrumb' );
+?>
 
 <div class="content">
 <div class="inner">
 <div class="row">
 
 <main class="primary">
+<div class="content__page">
 
 <?php
 if ( have_posts() ) :
@@ -26,7 +23,7 @@ if ( have_posts() ) :
 		the_post();
 		?>
 
-<article <?php post_class( array( 'entry' ) ); ?>>
+<article <?php post_class( array( 'entry', 'entry--page' ) ); ?>>
 
 	<div class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1><!-- /entry-title -->
@@ -76,6 +73,7 @@ endwhile;
 endif;
 ?>
 
+</div><!-- /.content__page -->
 </main><!-- /primary -->
 
 

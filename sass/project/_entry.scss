@@ -1,9 +1,5 @@
 .entry {
-	// box-shadow: 0 0 3px 0 rgba(#000, 0.16);
-	border: 1px solid rgba(#000, 0.16);
 	background: #fff;
-	padding: 24px;
-	margin-bottom: 32px;
 }
 
 .entry-header {
@@ -283,4 +279,13 @@
 			opacity: $opacity;
 		}
 	}
+}
+
+.entry--single {
+}
+
+.entry--page {
+}
+
+.entry--archive {
 }

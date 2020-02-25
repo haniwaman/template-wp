@@ -13,8 +13,8 @@ if ( ! function_exists( 'my_breadcrumb' ) ) {
 	 */
 	function my_breadcrumb( $object_type = '' ) {
 		$breadcrumb_html       = '';
-		$breadcrumb_beore      = '<nav class="breadcrumb"><ul>';
-		$breadcrumb_after      = '</ul></nav>';
+		$breadcrumb_beore      = '<ul>';
+		$breadcrumb_after      = '</ul>';
 		$breadcrumb_home       = apply_filters( 'my_breadcrumb_home', 'Home' );
 		$breadcrumb_home_tag   = '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . $breadcrumb_home . '</a></li>';
 		$breadcrumb_bridge     = apply_filters( 'my_breadcrumb_bridge', '&gt;' );

@@ -1,0 +1,231 @@
+// https://qiita.com/koya58/items/0c94829ac4f6d138a4a7
+
+// 引用
+.wp-block-quote {
+
+	> p {
+	}
+
+	> cite {
+	}
+}
+
+// 画像
+.wp-block-image {
+
+	> img {
+	}
+
+	> figcaption {
+	}
+}
+
+// ギャラリー
+.wp-block-gallery {
+}
+
+.blocks-gallery-item {
+
+	> figure {
+
+		> img {
+		}
+
+		> figcaption {
+		}
+	}
+}
+
+// オーバーレイ
+.wp-block-cover {
+}
+
+.wp-block-cover-text {
+}
+
+// ファイル
+.wp-block-file {
+}
+
+.wp-block-file__button {
+}
+
+// 動画
+.wp-block-video {
+
+	> video {
+	}
+
+	> figcaption {
+	}
+}
+
+// プルクオート
+.wp-block-pullquote {
+
+	> blockquote {
+
+		> p {
+		}
+
+		> cite {
+		}
+	}
+}
+
+// ソースコード
+.wp-block-code {
+
+	> code {
+	}
+}
+
+// 整形済み
+.wp-block-preformatted {
+
+	> code {
+	}
+}
+
+// テーブル
+.wp-block-table {
+
+	tr {
+	}
+
+	th,
+	td {
+	}
+
+	th {
+	}
+
+	td {
+	}
+}
+
+// 詩
+.wp-block-verse {
+}
+
+// ボタン
+.wp-block-button {
+}
+
+.wp-block-button__link {
+}
+
+// カラム
+.wp-block-columns {
+}
+
+.wp-block-column {
+}
+
+// メディアと文章
+.wp-block-media-text {
+}
+
+.wp-block-media-text__media {
+
+	> img {
+	}
+}
+
+.wp-block-media-text__content {
+}
+
+// カレンダー
+.wp-block-calendar {
+
+	table {
+
+		caption {
+		}
+
+		tr {
+		}
+
+		th,
+		td {
+		}
+
+		th {
+		}
+
+		td {
+		}
+	}
+}
+
+// アーカイブ
+.wp-block-archives {
+
+	li {
+
+		a {
+		}
+	}
+}
+
+.wp-block-categories {
+
+	li {
+
+		a {
+		}
+	}
+}
+
+.wp-block-latest-comments {
+}
+
+.wp-block-latest-comments__comment {
+
+	> img {
+	}
+}
+
+// 最新の記事
+.wp-block-latest-posts {
+
+	li {
+
+		a {
+		}
+	}
+}
+
+// 検索
+.wp-block-search {
+}
+
+.wp-block-search__label {
+}
+
+.wp-block-search__input {
+}
+
+.wp-block-search__button {
+}
+
+// タグクラウド
+.wp-block-tag-cloud {
+
+	a {
+	}
+}
+
+// 埋め込み
+.wp-block-embed {
+}
+
+// YouTube
+.wp-block-embed-youtube {
+}
+
+.wp-block-embed__wrapper {
+
+	> iframe {
+	}
+}

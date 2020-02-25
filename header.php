@@ -35,18 +35,17 @@
 </div><!-- /header-logo -->
 <?php endif; ?>
 
+<nav class="header-nav">
 <?php
 wp_nav_menu(
 	array(
-		'container'       => false,
-		'depth'           => 1,
-		'theme_location'  => 'global',
-		'container'       => 'nav',
-		'container_class' => 'header-nav',
-		'menu_class'      => 'header-list',
+		'container'      => false,
+		'depth'          => 1,
+		'theme_location' => 'global',
 	)
 );
 ?>
+</nav><!-- /.header-nav -->
 
 
 <div class="header-drawer">

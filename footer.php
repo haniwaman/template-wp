@@ -11,18 +11,17 @@
 <div class="footer-menu">
 <div class="inner">
 
+<nav class="footer-nav">
 <?php
 	wp_nav_menu(
 		array(
-			'container'       => false,
-			'depth'           => 1,
-			'theme_location'  => 'utility',
-			'container'       => 'nav',
-			'container_class' => 'footer-nav',
-			'menu_class'      => 'footer-list',
+			'container'      => false,
+			'depth'          => 1,
+			'theme_location' => 'utility',
 		)
 	);
 	?>
+</nav><!-- /.footer-nav -->
 
 </div><!-- /inner -->
 </div><!-- /footer-menu -->

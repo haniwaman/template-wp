@@ -109,7 +109,7 @@
 	color: #666;
 }
 
-.entry-items-horizon02 {
+.entry-items--horizon02 {
 	display: flex;
 	flex-wrap: wrap;
 
@@ -137,7 +137,7 @@
 	}
 }
 
-.entry-items-horizon03 {
+.entry-items--horizon03 {
 	display: flex;
 	flex-wrap: wrap;
 
@@ -165,7 +165,7 @@
 	}
 }
 
-.entry-items-horizon04 {
+.entry-items--horizon04 {
 	display: flex;
 	flex-wrap: wrap;
 
@@ -179,7 +179,7 @@
 		}
 
 		&:last-child {
-			margin-bottom: 20px;
+			margin-bottom: 32px;
 		}
 	}
 
