@@ -196,3 +196,45 @@ function my_list_anchor( $output ) {
 }
 add_filter( 'wp_list_categories', 'my_list_anchor' );
 add_filter( 'get_archives_link', 'my_list_anchor' );
+
+
+/**
+ * タイトル文字列の変換
+ *
+ * @param string $title 変更前のタイトル.
+ * @param int    $id 投稿id.
+ * @return string $title 変更後のタイトル.
+ */
+function my_breadcrumb_title( $title ) {
+	$max_num = 300;
+	if ( mb_strlen( $title ) > $max_num ) {
+		$title = mb_substr( $title, 0, $max_num ) . '...';
+	}
+
+	return $title;
+}
+add_filter( 'my_breadcrumb_title', 'my_breadcrumb_title', 10, 2 );
+
+/**
+ * 抜粋文の文字数の変更
+ *
+ * @param int $length 変更前の文字数.
+ * @return int $length 変更後の文字数.
+ */
+function my_excerpt_length( $length ) {
+	return 80;
+}
+add_filter( 'excerpt_length', 'my_excerpt_length', 999 );
+
+
+/**
+ * 抜粋文の省略記法の変更
+ *
+ * @param string $more 変更前の省略記法.
+ * @return string $more 変更後の省略記法.
+ */
+function my_excerpt_more( $more ) {
+	return '...';
+
+}
+add_filter( 'excerpt_more', 'my_excerpt_more' );
