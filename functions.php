@@ -202,7 +202,6 @@ add_filter( 'get_archives_link', 'my_list_anchor' );
  * タイトル文字列の変換
  *
  * @param string $title 変更前のタイトル.
- * @param int    $id 投稿id.
  * @return string $title 変更後のタイトル.
  */
 function my_breadcrumb_title( $title ) {
