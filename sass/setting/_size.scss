@@ -1,6 +1,7 @@
 // レイアウト幅
 $layout-width-canvas: 1440px;
 $layout-width-inner: 1180px;
+$layout-width-vw: 1180;
 $layout-width-sp: 768px;
 $layout-width-main: 840px;
 $layout-width-side: $layout-width-inner - $layout-width-main - 38px; /* 38pxは余白の幅 */
