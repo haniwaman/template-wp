@@ -13,11 +13,11 @@ $drawer-content-width: 200px;
 // 表示
 $is-bar-text-show: false;
 
-.drawer {
+.p-drawer {
 	z-index: map-get($layer, "drawer");
 }
 
-.drawer-close {
+.p-drawer-close {
 	display: none;
 	position: fixed;
 	z-index: map-get($layer, "drawer") - 1;
@@ -35,7 +35,7 @@ $is-bar-text-show: false;
 	}
 }
 
-.drawer-icon {
+.p-drawer-icon {
 	display: inline-block;
 	position: relative;
 	z-index: map-get($layer, "drawer") + 1;
@@ -66,7 +66,7 @@ $is-bar-text-show: false;
 	}
 }
 
-.drawer-bars {
+.p-drawer-icon__bars {
 	display: inline-block;
 	width: $drawer-bar-width;
 	height: $drawer-bar-height + ($drawer-bar-space + $drawer-bar-height) * 2;
@@ -74,7 +74,7 @@ $is-bar-text-show: false;
 	vertical-align: bottom;
 }
 
-.drawer-bar {
+.p-drawer-icon__bar {
 	position: absolute;
 	right: 0;
 	left: 0;
@@ -115,7 +115,7 @@ $is-bar-text-show: false;
 	}
 }
 
-.drawer-content {
+.p-drawer-content {
 	overflow: auto;
 	position: fixed;
 	top: 0;
@@ -139,13 +139,13 @@ $is-bar-text-show: false;
 	}
 }
 
-.drawer-content--left {
+.p-drawer-content--left {
 	transform: translateX(-105%);
 	left: 0;
 	right: auto;
 }
 
-.drawer-content--top {
+.p-drawer-content--top {
 	transform: translateY(-105%);
 	top: 0;
 	bottom: auto;
@@ -154,5 +154,19 @@ $is-bar-text-show: false;
 	max-width: 100%;
 }
 
-.drawer-content--cover {
+.p-drawer-content--cover {
+	bottom: auto;
+	height: 100%;
+	max-width: 100%;
+	opacity: 0;
+	top: 0;
+	transform: translateX(0);
+	transition: all 0.5s linear 0s;
+	visibility: hidden;
+	width: 100%;
+
+	&.is-checked {
+		opacity: 1;
+		visibility: visible;
+	}
 }

@@ -12,12 +12,12 @@ get_template_part( 'parts/breadcrumb' );
 
 
 
-<div class="content content--column-one">
-<div class="inner">
-<div class="row">
+<div class="p-content p-content--column-one">
+<div class="l-inner">
+<div class="p-content__row">
 
-	<main class="primary">
-	<div class="content__archive">
+	<main class="p-primary">
+	<div class="p-content__archive">
 
 		<?php
 		if ( have_posts() ) :
@@ -63,7 +63,7 @@ get_template_part( 'parts/breadcrumb' );
 		</div><!-- /entry-items -->
 
 			<?php if ( paginate_links() ) : ?>
-		<div class="pagenation">
+		<div class="p-pagenation">
 				<?php
 				echo wp_kses_post(
 					paginate_links(
@@ -77,20 +77,20 @@ get_template_part( 'parts/breadcrumb' );
 					)
 				);
 				?>
-		</div><!-- /pagenation -->
+		</div><!-- /.p-pagenation -->
 		<?php endif; ?>
 			<?php
 		endif;
 		?>
 
-</div><!-- /.content__archive -->
-</main><!-- /primary -->
+</div><!-- /.p-content__archive -->
+</main><!-- /.p-primary -->
 
 <?php get_sidebar(); ?>
 
-</div><!-- /row -->
-</div><!-- /inner -->
-</div><!-- /content -->
+</div><!-- /.p-content__row -->
+</div><!-- /.l-inner -->
+</div><!-- /.p-content -->
 
 
 

@@ -1,13 +1,13 @@
-.content {
+.p-content {
 	padding: 0;
 
-	> .inner {
+	> .l-inner {
 	}
 }
 
-.content--full {
+.p-content--full {
 
-	> .inner {
+	> .l-inner {
 		width: 100%;
 
 		@include mq("tab") {
@@ -22,19 +22,25 @@
 	}
 }
 
-.primary {
+.p-content__row {
+	display: flex;
+	flex-wrap: wrap;
+	height: inherit;
+}
+
+.p-primary {
 	width: ($layout-width-main / $layout-width-inner) * 100%;
 
 	@include mq("sp") {
 		width: 100%;
 	}
 
-	.content--column-one & {
+	.p-content--column-one & {
 		width: 100%;
 	}
 }
 
-.secondary {
+.p-secondary {
 	width: ($layout-width-side / $layout-width-inner) * 100%;
 	margin-left: auto;
 
@@ -43,7 +49,7 @@
 		margin-top: 64px;
 	}
 
-	.content--column-one & {
+	.p-content--column-one & {
 		width: 100%;
 		margin-top: 64px;
 	}

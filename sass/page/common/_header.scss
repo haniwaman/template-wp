@@ -1,4 +1,4 @@
-.header {
+.p-header {
 	position: relative;
 	width: 100%;
 	background: #fff;
@@ -13,10 +13,14 @@
 	}
 }
 
-.header-inner {
+.p-header__row {
+	display: flex;
+	flex-wrap: wrap;
+	height: inherit;
+	align-items: center;
 }
 
-.header-logo {
+.p-header__logo {
 	margin-right: auto;
 
 	a {
@@ -32,7 +36,7 @@
 	}
 }
 
-.header-nav {
+.p-header__nav {
 
 	@include mq("sp") {
 		display: none;
@@ -63,7 +67,7 @@
 	}
 }
 
-.header-drawer {
+.p-header__drawer {
 	display: none;
 
 	@include mq("sp") {

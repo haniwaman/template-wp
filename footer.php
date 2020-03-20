@@ -7,11 +7,12 @@
 
 ?>
 
+<footer class="p-footer">
 
-<div class="footer-menu">
-<div class="inner">
+<div class="p-footer__menu">
+<div class="l-inner">
 
-<nav class="footer-nav">
+<nav class="p-footer-nav">
 <?php
 	wp_nav_menu(
 		array(
@@ -21,21 +22,20 @@
 		)
 	);
 	?>
-</nav><!-- /.footer-nav -->
+</nav><!-- /.p-footer-nav -->
 
-</div><!-- /inner -->
-</div><!-- /footer-menu -->
+</div><!-- /.l-inner -->
+</div><!-- /.p-footer__menu -->
 
+<div class="p-footer__copy">
+<div class="l-inner">
+	<p>Copyright &copy; <?php echo esc_html( date( 'Y' ) ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a> All Rights Reserved.</p>
+</div><!-- /.l-inner -->
+</div><!-- /.p-footer__copy -->
 
-<footer class="footer">
-<div class="inner">
+</footer><!-- /.p-footer -->
 
-<div class="footer-copy">Copyright &copy; <?php echo esc_html( date( 'Y' ) ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a> All Rights Reserved.</div><!-- /footer-copy -->
-
-</div><!-- /inner -->
-</footer><!-- /footer -->
-
-<div class="totop"><a href="#"><i class="fas fa-chevron-up"></i></a></div><!-- /.totop -->
+<div class="p-totop"><a href="#"><i class="fas fa-chevron-up"></i></a></div><!-- /.p-totop -->
 
 <?php wp_footer(); ?>
 </body>

@@ -10,12 +10,12 @@ get_template_part( 'parts/mv/single' );
 get_template_part( 'parts/breadcrumb' );
 ?>
 
-<div class="content">
-<div class="inner">
-<div class="row">
+<div class="p-content">
+<div class="l-inner">
+<div class="p-content__row">
 
-<main class="primary">
-<div class="content__single">
+<main class="p-primary">
+<div class="p-content__single">
 
 <?php
 if ( have_posts() ) :
@@ -23,7 +23,7 @@ if ( have_posts() ) :
 		the_post();
 		?>
 
-<article <?php post_class( array( 'entry', 'entry--single' ) ); ?>>
+<article <?php post_class( array( 'p-entry', 'p-entry--single' ) ); ?>>
 
 	<div class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1><!-- /entry-title -->
@@ -74,15 +74,15 @@ endif;
 ?>
 
 </div><!-- /.content__single -->
-</main><!-- /primary -->
+</main><!-- /.p-primary -->
 
 
 <?php get_sidebar(); ?>
 
 
-</div><!-- /row -->
-</div><!-- /inner -->
-</div><!-- /content -->
+</div><!-- /.p-content__row -->
+</div><!-- /.l-inner -->
+</div><!-- /.p-content -->
 
 
 <?php get_footer(); ?>

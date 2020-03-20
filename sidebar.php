@@ -7,8 +7,8 @@
 
 if ( is_active_sidebar( 'sidebar' ) ) : ?>
 
-<aside class="secondary">
+<aside class="p-secondary">
 	<?php dynamic_sidebar( 'sidebar' ); ?>
-</aside><!-- secondary -->
+</aside><!-- /.p-secondary -->
 
 <?php endif; ?>

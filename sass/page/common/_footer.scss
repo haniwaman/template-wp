@@ -1,14 +1,49 @@
-.footer {
+.p-footer {
 	background: #666;
+}
 
-	> .inner {
+.p-footer__menu {
+	padding-top: 32px;
+	padding-bottom: 32px;
+
+	> .l-inner {
 	}
 }
 
-.footer-copy {
+.p-footer-nav {
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		li {
+			margin-right: 42px;
+			margin-bottom: 4px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			a {
+				text-decoration: none;
+				transition: opacity 0.3s ease 0s;
+
+				&:hover {
+					opacity: $opacity;
+				}
+			}
+		}
+	}
+}
+
+.p-footer__copy {
 	color: #fff;
 	font-size: 14px;
 	padding: 8px;
+
+	> .l-inner {
+	}
 
 	a {
 		text-decoration: none;

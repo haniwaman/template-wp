@@ -11,30 +11,30 @@ get_template_part( 'parts/breadcrumb' );
 ?>
 
 
-<div class="content">
-<div class="inner">
-<div class="row">
+<div class="p-content">
+<div class="l-inner">
+<div class="p-content__row">
 
 
-<main class="primary">
-<div class="content__page">
+<main class="p-primary">
+<div class="p-content__page">
 
-<article <?php post_class( array( 'entry', 'entry--page' ) ); ?>>
+<article <?php post_class( array( 'p-entry', 'p-entry--page' ) ); ?>>
 
 	<p>コンテンツが存在しません。</p>
 
 </article><!-- /entry -->
 
-</div><!-- /.content__page -->
-</main><!-- /primary -->
+</div><!-- /.p-content__page -->
+</main><!-- /.p-primary -->
 
 
 <?php get_sidebar(); ?>
 
 
-</div><!-- /row -->
-</div><!-- /inner -->
-</div><!-- /content -->
+</div><!-- /.p-content__row -->
+</div><!-- /.l-inner -->
+</div><!-- /.p-content -->
 
 
 <?php get_footer(); ?>

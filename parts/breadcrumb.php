@@ -8,7 +8,7 @@
 ?>
 
 <nav class="breadcrumb">
-<div class="inner">
+<div class="l-inner">
 	<?php my_breadcrumb(); ?>
-</div><!-- /.inner -->
+</div><!-- /.l-inner -->
 </nav><!-- /breadcrumb -->
