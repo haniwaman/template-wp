@@ -50,12 +50,12 @@ wp_nav_menu(
 
 <div class="p-header__drawer">
 	<div class="p-drawer-icon js-drawer for-drawer" data-target="for-drawer">
-		<div class="p-drawer-icon__bars">
+		<button class="p-drawer-icon__bars">
 				<span class="p-drawer-icon__bar"></span>
 				<span class="p-drawer-icon__bar"></span>
 				<span class="p-drawer-icon__bar"></span>
 		</div><!-- /.p-drawer-icon__bars -->
-	</div><!-- /.p-drawer-icon -->
+	</button><!-- /.p-drawer-icon -->
 </div><!-- /.p-header__drawer -->
 
 </div><!-- /.p-header__row -->

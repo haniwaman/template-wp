@@ -22,10 +22,10 @@ get_template_part( 'parts/breadcrumb' );
 		<?php
 		if ( have_posts() ) :
 			?>
-		<div class="archive-head">
-			<h2 class="archive-title"><?php the_archive_title(); ?></h2><!-- /archive-title -->
-			<div class="archive-description"><?php the_archive_description(); ?></div><!-- /archive-description -->
-		</div><!-- /archive-head -->
+		<div class="p-archive-head">
+			<h2 class="p-archive-head__title"><?php the_archive_title(); ?></h2><!-- /.p-archive-head__title -->
+			<div class="p-archive-head__description"><?php the_archive_description(); ?></div><!-- /.p-archive-head__description -->
+		</div><!-- /p-archive-head -->
 
 		<div class="entry-items entry-items--horizon04">
 			<?php

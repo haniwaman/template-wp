@@ -937,12 +937,12 @@ select:focus {
 	visibility: visible;
 }
 
-.archive-title {
+.p-archive-head__title {
 	font-size: 24px;
 	font-weight: 700;
 }
 
-.archive-description {
+.p-archive-head__description {
 	color: #666;
 	font-size: 14px;
 }
@@ -1544,89 +1544,84 @@ input[type="submit"].search-submit {
 
 @media (min-width: 768px) and (max-width: 1179px) {
 
-.hidden-tab {
-	display: none;
-}
-
+	.hidden-tab {
+		display: none;
+	}
 }
 
 @media screen and (min-width: 1180px) {
 
-.hidden-pc {
-	display: none;
-}
-
+	.hidden-pc {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 1179px) {
 
-.p-content--full > .l-inner {
-	padding-left: 0;
-	padding-right: 0;
-}
+	.p-content--full > .l-inner {
+		padding-left: 0;
+		padding-right: 0;
+	}
 
-.l-inner {
-	padding-left: 24px;
-	padding-right: 24px;
-}
-
+	.l-inner {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
 }
 
 @media screen and (max-width: 767px) {
 
-.p-content--full > .l-inner {
-	padding-left: 0;
-	padding-right: 0;
-}
+	.p-content--full > .l-inner {
+		padding-left: 0;
+		padding-right: 0;
+	}
 
-.p-primary {
-	width: 100%;
-}
+	.p-primary {
+		width: 100%;
+	}
 
-.p-secondary {
-	margin-top: 64px;
-	width: 100%;
-}
+	.p-secondary {
+		margin-top: 64px;
+		width: 100%;
+	}
 
-.l-inner {
-	padding-left: 16px;
-	padding-right: 16px;
-}
+	.l-inner {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
 
-.entry-item {
-	display: block;
-}
+	.entry-item {
+		display: block;
+	}
 
-.entry-item-img {
-	width: 100%;
-}
+	.entry-item-img {
+		width: 100%;
+	}
 
-.entry-item-body {
-	margin-top: 20px;
-	width: 100%;
-}
+	.entry-item-body {
+		margin-top: 20px;
+		width: 100%;
+	}
 
-.p-totop a {
-	font-size: 12px;
-	height: 30px;
-	width: 30px;
-}
+	.p-totop a {
+		font-size: 12px;
+		height: 30px;
+		width: 30px;
+	}
 
-.p-header {
-	height: 60px;
-}
+	.p-header {
+		height: 60px;
+	}
 
-.p-header__nav {
-	display: none;
-}
+	.p-header__nav {
+		display: none;
+	}
 
-.p-header__drawer {
-	display: block;
-}
+	.p-header__drawer {
+		display: block;
+	}
 
-.hidden-sp {
-	display: none;
+	.hidden-sp {
+		display: none;
+	}
 }
-
-}
-
