@@ -21,7 +21,7 @@
 <?php wp_body_open(); ?>
 
 
-<header class="p-header">
+<header class="l-header p-header" role="banner">
 <div class="l-inner">
 <div class="p-header__row">
 

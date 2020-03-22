@@ -7,7 +7,7 @@
 
 ?>
 
-<footer class="p-footer">
+<footer class="l-footer p-footer" role="contentinfo">
 
 <div class="p-footer__menu">
 <div class="l-inner">

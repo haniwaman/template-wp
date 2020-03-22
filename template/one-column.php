@@ -15,7 +15,7 @@ get_template_part( 'parts/breadcrumb' );
 <div class="l-inner">
 <div class="p-content__row">
 
-<main class="p-primary">
+<main class="l-primary">
 
 <?php
 if ( have_posts() ) :
@@ -25,15 +25,15 @@ if ( have_posts() ) :
 
 <article <?php post_class( array( 'p-entry', 'p-entry--page' ) ); ?>>
 
-	<div class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1><!-- /entry-title -->
+	<div class="p-entry__header">
+		<h1 class="p-entry__title"><?php the_title(); ?></h1><!-- /p-entry__title -->
 
-		<div class="entry-meta">
-			<time class="entry-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
-			<div class="entry-tag"><?php my_the_post_category(); ?></div><!-- /entry-item-tag -->
-		</div><!-- /entry-meta -->
+		<div class="p-entry__meta">
+			<time class="p-entry__published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
+			<div class="p-entry__label"><?php my_the_post_category(); ?></div><!-- /c-media__label -->
+		</div><!-- /p-entry__meta -->
 
-		<div class="entry-img">
+		<div class="p-entry__img">
 		<?php
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'my_thumbnail' );
@@ -41,15 +41,15 @@ if ( have_posts() ) :
 			echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/noimg.png" alt="">';
 		}
 		?>
-		</div><!-- /entry-img -->
-	</div><!-- /entry-header -->
+		</div><!-- /p-entry__img -->
+	</div><!-- /p-entry__header -->
 
-	<div class="entry-body">
+	<div class="p-entry__body">
 		<?php the_content(); ?>
 		<?php
 		wp_link_pages(
 			array(
-				'before'         => '<nav class="entry-links">',
+				'before'         => '<nav class="p-entry-links">',
 				'after'          => '</nav>',
 				'link_before'    => '',
 				'link_after'     => '',
@@ -58,22 +58,22 @@ if ( have_posts() ) :
 			)
 		);
 		?>
-	</div><!-- /entry-body -->
+	</div><!-- /p-entry__body -->
 
 </article><!-- /entry -->
 
 
-<div class="entry-pager">
-	<div class="entry-prev"><?php previous_post_link( '%link', '<i class="fas fa-angle-left"></i> 前の記事', false ); ?></div>
-	<div class="entry-next"><?php next_post_link( '%link', '次の記事 <i class="fas fa-angle-right"></i>', false ); ?></div>
-</div><!-- /entry-pager -->
+<div class="p-entry-pager">
+	<div class="p-entry-pager__prev"><?php previous_post_link( '%link', '<i class="fas fa-angle-left"></i> 前の記事', false ); ?></div>
+	<div class="p-entry-pager__next"><?php next_post_link( '%link', '次の記事 <i class="fas fa-angle-right"></i>', false ); ?></div>
+</div><!-- /p-entry-pager -->
 
 		<?php
 endwhile;
 endif;
 ?>
 
-</main><!-- /.p-primary -->
+</main><!-- /.l-primary -->
 
 
 <?php get_sidebar(); ?>

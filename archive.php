@@ -15,7 +15,7 @@ get_template_part( 'parts/breadcrumb' );
 <div class="l-inner">
 <div class="p-content__row">
 
-	<main class="p-primary">
+	<main class="l-primary" role="main">
 	<div class="p-content__archive">
 
 		<?php
@@ -26,40 +26,42 @@ get_template_part( 'parts/breadcrumb' );
 			<div class="p-archive-head__description"><?php the_archive_description(); ?></div><!-- /.p-archive-head__description -->
 		</div><!-- /.p-archive-head -->
 
-		<div class="entry-items entry-items--horizon04">
+		<div class="p-entries p-entries--horizon04">
 			<?php
 			while ( have_posts() ) :
 				the_post();
 				?>
 
-		<div <?php post_class( array( 'entry-item' ) ); ?>>
+		<div <?php post_class( array( 'p-entries__item' ) ); ?>>
 
-		<div class="entry-item-img">
-			<a href="<?php the_permalink(); ?>">
-				<?php
-				if ( has_post_thumbnail() ) {
-					the_post_thumbnail( 'my_thumbnail' );
-				} else {
-					echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/noimg.png" alt="">';
-				}
-				?>
-			</a>
-		</div><!-- /entry-item-img -->
+			<div class="c-media">
+				<div class="c-media__img">
+					<a class="c-media__img-in" href="<?php the_permalink(); ?>">
+						<?php
+						if ( has_post_thumbnail() ) {
+							the_post_thumbnail( 'my_thumbnail' );
+						} else {
+							echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/noimg.png" alt="">';
+						}
+						?>
+					</a><!-- /.c-media__img-in -->
+				</div><!-- /.c-media__img -->
 
-		<div class="entry-item-body">
-			<div class="entry-item-meta">
-				<time class="entry-item-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time><!-- /entry-item-published -->
-				<div class="entry-item-tag"><?php my_the_post_category(); ?></div><!-- /entry-item-tag -->
-			</div><!-- /entry-item-meta -->
-			<h2 class="entry-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2><!-- /entry-item-title -->
-			<div class="entry-item-excerpt"><?php the_excerpt(); ?></div><!-- /entry-item-excerpt -->
-		</div><!-- /entry-item-body -->
+				<div class="c-media__body">
+					<div class="c-media__meta">
+						<time class="c-media__published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time><!-- /.c-media__published -->
+						<div class="c-media__label"><?php my_the_post_category(); ?></div><!-- /.c-media__label -->
+					</div><!-- /.c-media__meta -->
+					<div class="c-media__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div><!-- /.c-media__title -->
+					<div class="c-media__excerpt"><?php the_excerpt(); ?></div><!-- /.c-media__excerpt -->
+				</div><!-- /.c-media__body -->
+			</div><!-- /.c-media -->
 
-	</div><!-- /entry-item -->
+		</div><!-- /.p-entries__item -->
 				<?php
 		endwhile;
 			?>
-		</div><!-- /entry-items -->
+		</div><!-- /.p-entries -->
 
 			<?php if ( paginate_links() ) : ?>
 		<div class="p-pagenation">
@@ -76,14 +78,14 @@ get_template_part( 'parts/breadcrumb' );
 					)
 				);
 				?>
-		</div><!-- /p-pagenation -->
+		</div><!-- /.p-pagenation -->
 		<?php endif; ?>
 			<?php
 		endif;
 		?>
 
 </div><!-- /.p-content__archive -->
-</main><!-- /.p-primary -->
+</main><!-- /.l-primary -->
 
 <?php get_sidebar(); ?>
 

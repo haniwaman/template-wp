@@ -16,17 +16,17 @@ get_template_part( 'parts/breadcrumb' );
 <div class="p-content__row">
 
 
-<main class="p-primary">
+<main class="l-primary">
 <div class="p-content__page">
 
 <article <?php post_class( array( 'p-entry', 'p-entry--page' ) ); ?>>
 
 	<p>コンテンツが存在しません。</p>
 
-</article><!-- /entry -->
+</article><!-- /.p-entry -->
 
 </div><!-- /.p-content__page -->
-</main><!-- /.p-primary -->
+</main><!-- /.l-primary -->
 
 
 <?php get_sidebar(); ?>
