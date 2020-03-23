@@ -25,6 +25,7 @@
 
 	a {
 		transition: all 0.3s ease 0s;
+		text-decoration: none;
 
 		&:hover {
 			opacity: $opacity;

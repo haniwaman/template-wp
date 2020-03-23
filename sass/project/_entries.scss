@@ -23,6 +23,15 @@
 		&:nth-child(2n) {
 			margin-right: 0;
 		}
+
+		@include mq("sp") {
+			width: 100%;
+			margin-right: 0;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	&.p-entries--column-three {
@@ -33,6 +42,15 @@
 		&:nth-child(3n) {
 			margin-right: 0;
 		}
+
+		@include mq("sp") {
+			width: 100%;
+			margin-right: 0;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	&.p-entries--column-four {
@@ -42,6 +60,15 @@
 
 		&:nth-child(4n) {
 			margin-right: 0;
+		}
+
+		@include mq("sp") {
+			width: 100%;
+			margin-right: 0;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 }

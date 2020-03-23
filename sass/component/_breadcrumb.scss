@@ -1,19 +1,20 @@
 .p-breadcrumb {
 	font-size: 13px;
 	color: #666;
+	overflow: auto;
 
 	ul {
 		display: flex;
-	}
 
-	li {
+		li {
 
-		a {
-			text-decoration: none;
-			transition: opacity 0.3s ease 0s;
+			a {
+				text-decoration: none;
+				transition: opacity 0.3s ease 0s;
 
-			&:hover {
-				opacity: $opacity;
+				&:hover {
+					opacity: $opacity;
+				}
 			}
 		}
 	}

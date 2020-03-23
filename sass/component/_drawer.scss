@@ -139,6 +139,12 @@ $is-bar-text-show: false;
 	}
 }
 
+.p-drawer-content--right {
+	transform: translateX(105%);
+	left: auto;
+	right: 0;
+}
+
 .p-drawer-content--left {
 	transform: translateX(-105%);
 	left: 0;

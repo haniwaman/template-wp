@@ -1,12 +1,10 @@
 <?php
 /**
  * 404
- *
- * @package WordPress
  */
 
 get_header();
-get_template_part( 'parts/mv/archive' );
+get_template_part( 'parts/template/mainvisual/page' );
 get_template_part( 'parts/breadcrumb' );
 ?>
 

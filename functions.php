@@ -1,8 +1,6 @@
 <?php
 /**
  * Functions
- *
- * @package WordPress
  */
 
 /**
@@ -75,9 +73,9 @@ function my_widget_init() {
 		array(
 			'name'          => 'サイドバー',
 			'id'            => 'sidebar',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'before_widget' => '<div id="%1$s" class="p-widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<div class="widget-title">',
+			'before_title'  => '<div class="p-widget__title">',
 			'after_title'   => '</div>',
 		)
 	);

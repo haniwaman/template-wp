@@ -1,8 +1,6 @@
 <?php
 /**
  * My template tags Functions
- *
- * @package WordPress
  */
 
 /**
@@ -86,13 +84,21 @@ function my_get_post_tags( $id = 0 ) {
 /**
  * ターム取得
  *
- * @param string $taxonomy タクソノミーのスラッグ名.
- * @return array ターム情報.
+ * @param integer $id 投稿id.
+ * @param string  $taxonomy タクソノミーのスラッグ名.
+ * @return array  ターム情報.
  */
-function my_get_post_terms( $taxonomy ) {
+function my_get_post_terms( $id = 0, $taxonomy ) {
+	global $post;
 	$this_terms = array();
-	$terms      = get_the_terms( get_the_ID(), $taxonomy );
-	$term_num   = count( $terms );
+	if ( 0 === $id ) {
+		$id = $post->ID;
+	}
+	$terms    = get_the_terms( $id, $taxonomy );
+	if ( ! $terms ) {
+		return false;
+	}
+	$term_num = count( $terms );
 	for ( $i = 0; $i < $term_num; $i++ ) {
 		$this_terms[ $i ]['id']   = $terms[ $i ]->term_id;
 		$this_terms[ $i ]['name'] = $terms[ $i ]->name;
@@ -105,11 +111,17 @@ function my_get_post_terms( $taxonomy ) {
 /**
  * タームを1つだけ表示
  *
- * @param string $taxonomy タクソノミーのスラッグ名.
+ * @param boolean $anchor aタグで出力するかどうか.
+ * @param integer $id 投稿id.
+ * @param string  $taxonomy タクソノミーのスラッグ名.
  */
-function my_the_post_term( $taxonomy ) {
+function my_the_post_term( $anchor = true, $id = 0, $taxonomy ) {
 	$this_terms = my_get_post_terms( $taxonomy );
 	if ( isset( $this_terms[0] ) ) {
-		echo '<div class="shopnews-tag m_' . esc_attr( $this_terms[0]['slug'] ) . '">' . esc_html( $this_terms[0]['name'] ) . '</div>';
+		if ( $anchor ) {
+			echo '<a href="' . esc_url( $this_terms[0]['link'] ) . '">' . esc_html( $this_terms[0]['name'] ) . '</a>';
+		} else {
+			echo esc_html( $this_terms[0]['name'] );
+		}
 	}
 }

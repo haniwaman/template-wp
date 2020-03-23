@@ -1,14 +1,12 @@
 <?php
 /**
  * Drawer
- *
- * @package WordPress
  */
 
 ?>
 
 <div class="p-drawer-close js-drawer for-drawer" data-target="for-drawer"></div>
-<div class="p-drawer-content for-drawer">
+<div class="p-drawer-content p-drawer-content--right for-drawer">
 	<?php
 	wp_nav_menu(
 		array(

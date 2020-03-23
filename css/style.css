@@ -392,6 +392,10 @@ select:focus {
 	outline: none;
 }
 
+.wp-block-image figcaption {
+	font-size: 13px;
+}
+
 .wp-caption {
 	max-width: 100%;
 }
@@ -417,6 +421,10 @@ select:focus {
 .gallery-item {
 	margin-bottom: 8px;
 	padding: 4px;
+}
+
+.gallery-icon a {
+	text-decoration: none;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -451,93 +459,44 @@ select:focus {
 	width: 11.11111%;
 }
 
-.p-pagenation {
-	margin-top: 32px;
-	text-align: center;
-}
-
-.p-pagenation a {
-	transition: color, background 0.3s ease 0s;
-}
-
-.p-pagenation a:hover {
-	background: #666;
-	color: #fff;
-}
-
-.p-pagenation a.next:hover,
-.p-pagenation a.prev:hover {
-	background: #fff;
-	color: #666;
-	opacity: 0.6;
-}
-
-.page-numbers {
-	background: #fff;
-	border: 1px solid #666;
-	color: #666;
-	display: inline-block;
-	height: 30px;
-	line-height: 28px;
-	margin-right: 8px;
-	min-width: 30px;
-	text-align: center;
-	text-decoration: none;
-}
-
-.page-numbers:last-child {
-	margin-right: 0;
-}
-
-.page-numbers.current {
-	background: #666;
-	color: #fff;
-}
-
-.page-numbers.dots,
-.page-numbers.next,
-.page-numbers.prev {
-	border: none;
-}
-
 .widget_archive select {
 	background: transparent url(../img/arrow.svg) no-repeat center right 8px/12px 8px;
 }
 
-.widget {
+.p-widget {
 	margin-bottom: 46px;
 }
 
-.widget:last-child {
+.p-widget:last-child {
 	margin-bottom: 0;
 }
 
-.widget ul {
+.p-widget ul {
 	font-size: 16px;
 	padding: 0 8px;
 }
 
-.widget li {
+.p-widget li {
 	font-size: inherit;
 	margin-bottom: 12px;
 }
 
-.widget li a {
+.p-widget li a {
 	display: inline-block;
 	font-size: inherit;
 	text-decoration: none;
 }
 
-.widget li a:hover {
+.p-widget li a:hover {
 	opacity: 0.6;
 }
 
-.widget li ul {
+.p-widget li ul {
 	font-size: 0.85em;
 	margin-top: 12px;
 }
 
-.widget-title {
+.p-widget__title {
 	background: transparent;
 	border-bottom: 1px solid #666;
 	color: #333;
@@ -731,18 +690,19 @@ select:focus {
 .p-breadcrumb {
 	color: #666;
 	font-size: 13px;
+	overflow: auto;
 }
 
 .p-breadcrumb ul {
 	display: flex;
 }
 
-.p-breadcrumb li a {
+.p-breadcrumb ul li a {
 	text-decoration: none;
 	transition: opacity 0.3s ease 0s;
 }
 
-.p-breadcrumb li a:hover {
+.p-breadcrumb ul li a:hover {
 	opacity: 0.6;
 }
 
@@ -905,6 +865,12 @@ select:focus {
 	transform: translateX(0);
 }
 
+.p-drawer-content--right {
+	left: auto;
+	right: 0;
+	transform: translateX(105%);
+}
+
 .p-drawer-content--left {
 	left: 0;
 	right: auto;
@@ -1015,6 +981,7 @@ select:focus {
 }
 
 .c-media__title {
+	line-height: 1.4;
 	margin-bottom: 4px;
 }
 
@@ -1040,12 +1007,12 @@ select:focus {
 }
 
 .c-media--horizon01 .c-media__img {
-	margin-right: 20px;
 	width: 30%;
 }
 
 .c-media--horizon01 .c-media__body {
-	width: calc(70% - 20px);
+	padding-left: 20px;
+	width: 70%;
 }
 
 .c-media--horizon02 {
@@ -1117,6 +1084,18 @@ select:focus {
 	margin-right: 0;
 }
 
+.p-entry-content {
+	overflow: hidden;
+}
+
+.p-entry-content > :first-child {
+	margin-top: 0;
+}
+
+.p-entry-content > :last-child {
+	margin-bottom: 0;
+}
+
 .p-entry-content h2 + p,
 .p-entry-content h3 + p,
 .p-entry-content h4 + p,
@@ -1166,6 +1145,7 @@ select:focus {
 
 .p-entry-content p {
 	line-height: 1.6;
+	margin-bottom: 0.8em;
 	margin-top: 1.2em;
 }
 
@@ -1175,10 +1155,20 @@ select:focus {
 	padding-left: 20px;
 }
 
+.p-entry-content ul ul,
+.p-entry-content ul ol {
+	margin-bottom: 0;
+}
+
 .p-entry-content ol {
 	list-style-type: decimal;
 	margin-bottom: 1em;
 	padding-left: 20px;
+}
+
+.p-entry-content ol ul,
+.p-entry-content ol ol {
+	margin-bottom: 0;
 }
 
 .p-entry-content li {
@@ -1214,6 +1204,7 @@ select:focus {
 .p-entry-content strong,
 .p-entry-content em,
 .p-entry-content b {
+	font-style: normal;
 	font-weight: 700;
 }
 
@@ -1267,6 +1258,32 @@ select:focus {
 	position: relative;
 }
 
+.p-entry-content iframe,
+.p-entry-content video,
+.p-entry-content object {
+	max-width: 100%;
+}
+
+.p-entry-tags {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.p-entry-tags__item {
+	margin-bottom: 4px;
+	margin-right: 4px;
+}
+
+.p-entry-tags__item a {
+	background: #ccc;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	font-size: 13px;
+	padding: 2px 6px;
+	text-decoration: none;
+}
+
 .p-entry {
 	background: #fff;
 }
@@ -1316,6 +1333,12 @@ select:focus {
 
 .p-entry__body {
 	margin-top: 32px;
+}
+
+.p-entry__tags {
+	border-top: 1px solid #ccc;
+	margin-top: 32px;
+	padding: 6px 2px;
 }
 
 .p-entry-links {
@@ -1389,6 +1412,55 @@ select:focus {
 
 .p-entry-pager__next a:hover {
 	opacity: 0.6;
+}
+
+.p-pagenation {
+	margin-top: 32px;
+	text-align: center;
+}
+
+.p-pagenation a {
+	transition: color, background 0.3s ease 0s;
+}
+
+.p-pagenation a:hover {
+	background: #666;
+	color: #fff;
+}
+
+.p-pagenation a.next:hover,
+.p-pagenation a.prev:hover {
+	background: #fff;
+	color: #666;
+	opacity: 0.6;
+}
+
+.page-numbers {
+	background: #fff;
+	border: 1px solid #666;
+	color: #666;
+	display: inline-block;
+	height: 30px;
+	line-height: 28px;
+	margin-right: 8px;
+	min-width: 30px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.page-numbers:last-child {
+	margin-right: 0;
+}
+
+.page-numbers.current {
+	background: #666;
+	color: #fff;
+}
+
+.page-numbers.dots,
+.page-numbers.next,
+.page-numbers.prev {
+	border: none;
 }
 
 input[type="submit"].search-submit {
@@ -1491,6 +1563,7 @@ input[type="submit"].search-submit {
 }
 
 .p-header__logo a {
+	text-decoration: none;
 	transition: all 0.3s ease 0s;
 }
 
@@ -1588,6 +1661,42 @@ input[type="submit"].search-submit {
 .c-media__body {
 	margin-top: 20px;
 	width: 100%;
+}
+
+.c-media--horizon01 .c-media__img {
+	margin-right: 0;
+	width: 100%;
+}
+
+.c-media--horizon01 .c-media__body {
+	width: 100%;
+}
+
+.p-entries__item.p-entries--column-two {
+	margin-right: 0;
+	width: 100%;
+}
+
+.p-entries__item.p-entries--column-two:last-child {
+	margin-bottom: 0;
+}
+
+.p-entries__item.p-entries--column-three {
+	margin-right: 0;
+	width: 100%;
+}
+
+.p-entries__item.p-entries--column-three:last-child {
+	margin-bottom: 0;
+}
+
+.p-entries__item.p-entries--column-four {
+	margin-right: 0;
+	width: 100%;
+}
+
+.p-entries__item.p-entries--column-four:last-child {
+	margin-bottom: 0;
 }
 
 .p-totop a {

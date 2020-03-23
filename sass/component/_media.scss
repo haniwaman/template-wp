@@ -85,6 +85,7 @@
 
 .c-media__title {
 	margin-bottom: 4px;
+	line-height: 1.4;
 
 	a {
 		text-decoration: none;
@@ -109,11 +110,20 @@
 
 	.c-media__img {
 		width: 30%;
-		margin-right: 20px;
+
+		@include mq("sp") {
+			width: 100%;
+			margin-right: 0;
+		}
 	}
 
 	.c-media__body {
-		width: calc(70% - 20px);
+		width: 70%;
+		padding-left: 20px;
+
+		@include mq("sp") {
+			width: 100%;
+		}
 	}
 }
 

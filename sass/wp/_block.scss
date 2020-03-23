@@ -16,7 +16,8 @@
 	> img {
 	}
 
-	> figcaption {
+	figcaption {
+		font-size: 13px;
 	}
 }
 
@@ -228,4 +229,8 @@
 
 	> iframe {
 	}
+}
+
+// オーディオ
+.wp-audio-shortcode {
 }

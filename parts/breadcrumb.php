@@ -1,14 +1,12 @@
 <?php
 /**
  * Breadcrumb
- *
- * @package WordPress
  */
 
 ?>
 
-<nav class="breadcrumb">
+<nav class="l-breadcrumb">
 <div class="l-inner">
 	<?php my_breadcrumb(); ?>
 </div><!-- /.l-inner -->
-</nav><!-- /breadcrumb -->
+</nav><!-- /.l-breadcrumb -->
