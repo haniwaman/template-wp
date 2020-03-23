@@ -1,5 +1,5 @@
 .c-media {
-	padding: 24px 12px;
+	padding: 12px;
 	border: 1px solid rgba(#000, 0.16);
 	background: #fff;
 }
@@ -46,7 +46,7 @@
 
 .c-media__body {
 	width: 70%;
-	padding: 0 12px;
+	padding: 0;
 
 	@include mq("sp") {
 		width: 100%;

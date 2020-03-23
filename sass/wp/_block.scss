@@ -113,7 +113,9 @@
 .wp-block-button {
 }
 
-.wp-block-button__link {
+a.wp-block-button__link {
+	text-decoration: none;
+	margin: 1em 0;
 }
 
 // カラム
