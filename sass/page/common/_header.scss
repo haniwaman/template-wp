@@ -4,7 +4,6 @@
 	background: #fff;
 	top: 0;
 	left: 0;
-	// box-shadow: 0 1px 3px rgba(#000, 0.16);
 	z-index: map-get($layer, "header");
 	height: $header-height;
 
@@ -73,5 +72,23 @@
 
 	@include mq("sp") {
 		display: block;
+	}
+}
+
+.p-header--center {
+	text-align: center;
+	height: auto;
+	padding: 8px 0;
+
+	.p-header__row {
+		display: block;
+	}
+
+	.p-header__nav {
+		margin-top: 16px;
+
+		ul {
+			justify-content: center;
+		}
 	}
 }

@@ -35,7 +35,7 @@
 	}
 
 	&.p-entries--column-three {
-		width: calc(33.33333333% - 28px * 3 / 2);
+		width: calc(33.33333333% - 28px * 2 / 3);
 		margin-right: 28px;
 		margin-bottom: 28px;
 
@@ -54,7 +54,7 @@
 	}
 
 	&.p-entries--column-four {
-		width: calc(25% - 20px * 4 / 3);
+		width: calc(25% - 20px * 3 / 4);
 		margin-right: 20px;
 		margin-bottom: 20px;
 

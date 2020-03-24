@@ -6,7 +6,7 @@
 ?>
 
 <?php $tp_logo_tag = is_front_page() ? 'h1' : 'div'; ?>
-<header class="l-header p-header" role="banner">
+<header class="l-header p-header p-header--center" role="banner">
 <div class="l-inner">
 <div class="p-header__row">
 
