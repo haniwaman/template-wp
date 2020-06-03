@@ -72,6 +72,8 @@ $is-bar-text-show: false;
 	height: $drawer-bar-height + ($drawer-bar-space + $drawer-bar-height) * 2;
 	position: relative;
 	vertical-align: bottom;
+	padding: 0;
+	background-color: transparent;
 }
 
 .p-drawer-icon__bar {
