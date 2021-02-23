@@ -19,14 +19,11 @@ gulp.task("sass", function() {
 		.pipe(postcss([autoprefixer()]))
 		.pipe(postcss([cssdeclsort({ order: "alphabetical" })]))
 		.pipe(mmq())
-		.pipe(gulp.dest("./css"));
+		.pipe(gulp.dest("./template-wp/assets/css"));
 });
 
 gulp.task("watch", function(done) {
 	gulp.watch("./sass/**/*.scss", gulp.task("sass"));
-	gulp.watch("./*.php");
-	gulp.watch("./css/*.css");
-	gulp.watch("./js/*.js");
 });
 
 gulp.task("default", gulp.series(gulp.parallel("watch")));

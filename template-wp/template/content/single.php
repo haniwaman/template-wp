@@ -20,7 +20,7 @@
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'my_thumbnail' );
 		} else {
-			echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/noimg.png" alt="">';
+			echo '<img src="' . esc_url( get_template_directory_uri() ) . '/assets/img/no-img.png" alt="">';
 		}
 		?>
 		</div><!-- /p-entry__img -->

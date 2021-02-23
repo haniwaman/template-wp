@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/earlyaccess/notosansjapanese.css");
 
-/* 38pxは余白の幅 */
-
 [data-target] {
 	cursor: pointer;
 }
@@ -27,6 +25,8 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.6;
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
 	overflow-wrap: break-word;
 	overflow-x: hidden;
 }
@@ -552,8 +552,10 @@ select:focus {
 }
 
 .p-drawer-icon__bars {
+	background-color: transparent;
 	display: inline-block;
 	height: 19px;
+	padding: 0;
 	position: relative;
 	vertical-align: bottom;
 	width: 25px;
